@@ -8,7 +8,7 @@ Projet réalisé dans le cadre d'un cours de l'Enseeiht dans le but de classifie
 
 * `films.csv` 
 
-Liste csv de 5000 films extraient de _letterboxd.com_ avec l'addon webScraper.
+Liste csv de 5000 films extraits de _letterboxd.com_ avec l'addon webScraper.
 
 | web-scraper-order | web-scraper-start-url | films | films-href | title |genres | image-src | number |
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -16,7 +16,7 @@ Liste csv de 5000 films extraient de _letterboxd.com_ avec l'addon webScraper.
 
 * `film_analyse.ipynb` 
 
-Fichier jupyter permettant le pré-traitement du fichier films.csv. Ce fichier permet tout d'abord de choisir n (dans notre cas n=9) genres de films qui maximisent le nombre de films choisis et minimise le nombre de films qui partagent plusieurs catégories choisis, pour cela on utilise :
+Fichier jupyter permettant le pré-traitement du fichier films.csv. Ce fichier permet tout d'abord de choisir n (dans notre cas n=9) genres de films qui maximisent le nombre de films gardés et minimise le nombre de films qui partagent plusieurs catégories choisis, pour cela on utilise :
 
 
 $$(c1,\dots,cn) = argmax \prod_{i=1}^N \dfrac{ C_i}{\sum\limits_{j=1, i \neq j}^N C_{ij}} \cdot \tilde{\mu} \cdot \tilde{m}$$
@@ -29,8 +29,8 @@ $\tilde{\mu}$ la moyenne du nombre de film par classe qui ne sont pas contenu da
 
 $\tilde{m}$ la médian du nombre de film par classe qui ne sont pas contenu dans les autres classes
 
-**Après** avoir calculer les n genres, le fichier renvoit la liste `films_choisis.csv` des films ont dans leurs genres seulement un des n genres choisis.
-C'est a dire que si les genres choisis sont "horreur" et "comédie", le film Sa de genre horreur et drama est sélectionné et labélisé horreur, alors que le film Scary-movie de genre horreur et Comédie ne sera pas retenu.
+**Après** avoir calculer les n genres, le fichier renvoit la liste `films_choisis.csv` des films qui ont dans leurs genres seulement un des n genres choisis.
+C'est à dire que si les genres choisis sont "horreur" et "comédie", le film "ça" de genre horreur et drama est sélectionné et labélisé horreur, alors que le film Scary-movie de genre horreur et Comédie ne sera pas retenu.
 
 
 * `films_choisis.csv` 
@@ -47,5 +47,9 @@ Télécharge les affiches de film de `films_choisis.csv`  et les range dans le b
 * `./bdd/*`
 
 Dossier contenant les affiches de film selectionné et trié par genre (On n'a sélectionné que un genre par film par le pré-traitement)
+
+* `chargement_donnees.ipynb`
+
+Script python chargeant les affiches dans 3 matrices d'entrainement, de test et de validation pour utilisation ultèrieure.
 
 * `README.md` ce fichier
