@@ -4,7 +4,7 @@
 
 Projet réalisé dans le cadre d'un cours de l'Enseeiht dans le but de classifier le genres d'affiches de films via du Deep Learning.
 
-## Content
+## Construction de la bdd
 
 * `films.csv` 
 
@@ -53,3 +53,19 @@ Dossier contenant les affiches de film selectionné et trié par genre (On n'a s
 Script python chargeant les affiches dans 3 matrices d'entrainement, de test et de validation pour utilisation ultèrieure.
 
 * `README.md` ce fichier
+
+## Modèles
+
+Différents modèles ont été entrainés et améliorés au cours de ce projet. 3 ont été gardés pour montrer la progression et l'amélioration des résultats.
+
+* `rendu/ProjetIA_ModelBase.ipynb` 
+Un modèle LeNet adapté à notre problème.
+
+* `rendu/ProjetIA_TransferLearning.ipynb`
+En utilisant le modèle VGG16 et de la régularisation, nous avons effectué du transfer learning.
+
+* `rendu/ProjetIA_modeleFinal.ipynb`
+Dernier modèle, avec une loss différente et du fine-tuning.
+
+L'explication de chacun de ces modèles est disponible dans le `rapport_final_deep_learning.pdf`.
+
